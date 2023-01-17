@@ -55,7 +55,7 @@ async def new_post(client: Client, message: Message):
         pass
 
 async def get_shortlink(link):
-    url = 'https://dulink.in/api'
+    url = 'https://{SITE}/api'
     params = {'api': API_KEY, 'url': link}
 
     async with aiohttp.ClientSession() as session:
