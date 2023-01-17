@@ -9,3 +9,4 @@ dnspython
 aiohttp
 # --- For-Shortlink -------#
 shortzy
+requests
