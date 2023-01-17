@@ -10,7 +10,7 @@ async def get_shortlink(link):
         https = "https"
         link = link.replace("http", https)
     url = f'https://{SITE}/api'
-    params = {'api': 'API_KEY',
+    params = {'api': API_KEY,
               'url': link,
               }
 
