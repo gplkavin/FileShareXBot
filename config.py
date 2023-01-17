@@ -27,6 +27,10 @@ OWNER_ID = int(os.environ.get("OWNER_ID", ""))
 #Port
 PORT = os.environ.get("PORT", "8080")
 
+#shortlink
+API_KEY = os.environ.get("API_KEY", "1aab74171e9891abd0ba799e3fd568c9598a79e1")
+SITE = os.environ.get("SITE", "droplink.co")
+
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "")
 DB_NAME = os.environ.get("DATABASE_NAME", "filesharexbot")
