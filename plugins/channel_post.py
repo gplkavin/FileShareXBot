@@ -2,7 +2,7 @@
 
 import aiohttp
 import asyncio
-from shortlink import get_shortlink
+import os
 from pyrogram import filters, Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import FloodWait
