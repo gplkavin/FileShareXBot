@@ -1,30 +1,25 @@
-import os
+import aiohttp
 import asyncio
-from os import getenv, environ
-from asyncio import TimeoutError
-from shortzy import Shortzy
-from config import SITE , API_KEY
+import os
 
-API_KEY = str(getenv('API_KEY', 'e0867ce24e2238645541bf7651be2217b4cd5dd1'))
-SITE = str(getenv('SITE', 'shorturllink.in'))
-
-
-shortzy = Shortzy(API_KEY, SITE)
+####################  Tnlink  ####################
 
 async def get_shortlink(link):
-    if not API_KEY or not SITE:
-        return link
-
-    try:
-        x = await shortzy.convert(link, silently_fail=True)
-    except Exception:
-        x = await get_shortlink_sub(link)
-    return x
-
-
-async def get_shortlink_sub(link):
+    https = link.split(":")[0]
+    if "http" == https:
+        https = "https"
+        link = link.replace("http", https)
     url = f'https://{SITE}/api'
-    params = {'api': API_KEY, 'url': link}
-    scraper = cloudscraper.create_scraper() 
-    r = scraper.get(url, params=params)
-    return r.json()["shortenedUrl"]
+    params = {'api': 'API_KEY',
+              'url': link,
+              }
+
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url, params=params, raise_for_status=True, ssl=False) as response:
+            data = await response.json()
+            if data["status"] == "success":
+                return data['shortenedUrl']
+            else:
+                return f"Error: {data['message']}"
+            
+ 
