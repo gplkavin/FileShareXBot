@@ -35,7 +35,7 @@ async def channel_post(client: Client, message: Message):
                          ]]
                      )
 
-    await reply_text.edit(f"<b>Your File Stored in my Database!</b>\n\nUrl : \n<code>{link}</code> \n\nShort Link : \n<code>{short_link}</code> ", reply_markup=reply_markup, disable_web_page_preview = True)
+    await reply_text.edit(f"<b>Your File Stored in my Database!</b>\n\n<b>Url :</b> \n<code>{link}</code> \n\n<b>Short Link :</b> \n<code>{short_link}</code> \n\n Made By ♥️ @TEAM_TN ", reply_markup=reply_markup, disable_web_page_preview = True)
 
     if not DISABLE_CHANNEL_BUTTON:
         await post_message.edit_reply_markup(reply_markup)
