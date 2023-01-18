@@ -35,7 +35,7 @@ async def channel_post(client: Client, message: Message):
                          ]]
                      )
 
-    await reply_text.edit(f"<b>Here is your link</b>\n\n Url : \n\n {link} \n\n Short Link : \n\n {short_link} ", reply_markup=reply_markup, disable_web_page_preview = True)
+    await reply_text.edit(f"<b>Here is your link</b>\n\n Url : \n{link} \n\nShort Link : \n{short_link} ", reply_markup=reply_markup, disable_web_page_preview = True)
 
     if not DISABLE_CHANNEL_BUTTON:
         await post_message.edit_reply_markup(reply_markup)
