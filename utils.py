@@ -12,6 +12,7 @@ async def get_shortlink(link):
     params = {'api': SHORTENER_API,
               'url': link,
               }
+
     async def get_shortlink(link):
     if not SHORTENER_API or not SHORTENER_SITE:
         return link
