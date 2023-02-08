@@ -7,5 +7,3 @@ pymongo
 dnspython
 # --- For-Web-Response ------- #
 aiohttp
-Flask
-Gunicorn
