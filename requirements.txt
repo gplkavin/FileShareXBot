@@ -7,6 +7,5 @@ pymongo
 dnspython
 # --- For-Web-Response ------- #
 aiohttp
-# --- For-Shortlink -------#
-shortzy
-requests
+Flask
+Gunicorn
