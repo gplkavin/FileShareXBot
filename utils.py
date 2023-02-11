@@ -1,11 +1,14 @@
 import aiohttp
-import asyncio
-import os
 from config import *
 
+
 async def get_shortlink(link):
+
+    if not SHORTENER_API and SHORTENER_SITE:
+        return link
+
     https = link.split(":")[0]
-    if "http" == https:
+    if https == "http":
         https = "https"
         link = link.replace("http", https)
     url = f'https://{SHORTENER_SITE}/api'
