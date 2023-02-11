@@ -8,7 +8,8 @@ import logging
 from logging.handlers import RotatingFileHandler
 
 
-
+from dotenv import load_dotenv
+load_dotenv()
 #Bot token @Botfather
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
 
@@ -28,8 +29,8 @@ OWNER_ID = int(os.environ.get("OWNER_ID", ""))
 PORT = os.environ.get("PORT", "8080")
 
 #shortlink
-SHORTENER_API = os.environ.get("SHORTENER_API", "")
-SHORTENER_SITE = os.environ.get("SHORTENER_SITE", "")
+SHORTENER_API = os.environ.get("SHORTENER_API")
+SHORTENER_SITE = os.environ.get("SHORTENER_SITE")
 
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "")

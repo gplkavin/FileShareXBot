@@ -4,7 +4,7 @@ from config import *
 
 async def get_shortlink(link):
 
-    if not SHORTENER_API and SHORTENER_SITE:
+    if not (SHORTENER_API and SHORTENER_SITE):
         return link
 
     https = link.split(":")[0]
