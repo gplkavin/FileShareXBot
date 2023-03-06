@@ -29,8 +29,8 @@ OWNER_ID = int(os.environ.get("OWNER_ID", "1174794359"))
 PORT = os.environ.get("PORT", "8080")
 
 #shortlink
-SHORTENER_API = os.environ.get("52485ddd93ca298fd075e8979a5889721ca48f75")
-SHORTENER_SITE = os.environ.get("tnlink.in")
+SHORTENER_API = "52485ddd93ca298fd075e8979a5889721ca48f75"
+SHORTENER_SITE = "tnlink.in"
 
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://gplkavin:gplkavin@cluster0.nzdd34t.mongodb.net/?retryWrites=true&w=majority")
